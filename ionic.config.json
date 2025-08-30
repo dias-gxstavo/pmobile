@@ -1,0 +1,7 @@
+{
+  "name": "meu-porquinho",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
