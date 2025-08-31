@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Todas as Transações</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="gastos-filter">
+    <ion-select placeholder="Agosto 2025">
+      <ion-select-option>Agosto 2025</ion-select-option>
+      <ion-select-option>Julho 2025</ion-select-option>
+    </ion-select>
+    <ion-button fill="outline" size="small"><ion-icon name="search-outline"></ion-icon></ion-button>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let t of [1,2,3]">
+      <ion-avatar slot="start"><ion-icon name="cart-outline"></ion-icon></ion-avatar>
+      <ion-label>
+        <h3>Supermercado Extra</h3>
+        <p>Alimentação • 14:30</p>
+      </ion-label>
+      <div class="valor negativo">-R$ 85,40</div>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start"><ion-icon name="car-outline"></ion-icon></ion-avatar>
+      <ion-label>
+        <h3>Uber</h3>
+        <p>Transporte • 09:15</p>
+      </ion-label>
+      <div class="valor negativo">-R$ 12,50</div>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start"><ion-icon name="cash-outline"></ion-icon></ion-avatar>
+      <ion-label>
+        <h3>Salário Mensal</h3>
+        <p>Trabalho • 08:00</p>
+      </ion-label>
+      <div class="valor positivo">+R$ 2.500,00</div>
+    </ion-item>
+  </ion-list>
+</ion-content>

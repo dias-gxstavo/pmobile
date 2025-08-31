@@ -1,0 +1,23 @@
+ion-toolbar {
+  --background: #181828;
+  --color: #fff;
+}
+.gastos-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+}
+ion-list {
+  margin-top: 8px;
+}
+.valor {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.valor.negativo {
+  color: #ff4d4f;
+}
+.valor.positivo {
+  color: #4caf50;
+}

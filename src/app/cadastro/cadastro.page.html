@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="page-title">Cadastre-se</div>
+<ion-content>
+  <form class="cadastro-form" (ngSubmit)="enviar()">
+    <div class="input-group">
+      <label for="nome">Nome*</label>
+      <ion-input id="nome" [(ngModel)]="nome" name="nome" required></ion-input>
+    </div>
+    <div class="input-group">
+      <label for="celular">Celular*</label>
+      <ion-input id="celular" [(ngModel)]="celular" name="celular" required></ion-input>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <ion-input id="email" [(ngModel)]="email" name="email" type="email"></ion-input>
+    </div>
+    <ion-button expand="block" class="btn-primary" type="submit">ENVIAR</ion-button>
+  </form>
+</ion-content>

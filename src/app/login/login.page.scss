@@ -1,0 +1,37 @@
+ion-toolbar {
+  --background: #181828;
+  --color: #fff;
+}
+.login-form {
+  margin: 32px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.info {
+  color: #bdbdbd;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.login-extra {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bdbdbd;
+}
+.login-extra a {
+  color: #6C47FF;
+  margin-left: 4px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  color: #181828;
+}

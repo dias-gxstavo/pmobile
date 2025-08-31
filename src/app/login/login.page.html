@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="page-title">Login</div>
+<ion-content>
+  <form class="login-form" (ngSubmit)="next()">
+    <ion-input label="Celular" type="tel" [(ngModel)]="phone" name="phone" required fill="outline"></ion-input>
+    <div class="info">Um código vai ser enviado a você</div>
+    <ion-button expand="block" class="btn-primary" type="submit">PRÓXIMO</ion-button>
+  </form>
+  <div class="login-extra">
+    <span>Não tem conta?</span>
+    <a (click)="goToCadastro()">Cadastre-se</a>
+  </div>
+</ion-content>

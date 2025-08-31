@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="page-title">Login</div>
+<ion-content>
+  <div class="verify-container">
+    <div class="verify-title">Verificação</div>
+    <div class="verify-desc">Insira o código enviado ao SMS</div>
+    <div class="timer">05:00</div>
+    <form (ngSubmit)="send()">
+      <div class="code-boxes">
+        <input maxlength="1" type="text" pattern="[0-9]*" inputmode="numeric" class="code-box" [(ngModel)]="code1" name="code1" required (input)="autoFocusNext($event, 1)">
+        <input maxlength="1" type="text" pattern="[0-9]*" inputmode="numeric" class="code-box" [(ngModel)]="code2" name="code2" required (input)="autoFocusNext($event, 2)">
+        <input maxlength="1" type="text" pattern="[0-9]*" inputmode="numeric" class="code-box" [(ngModel)]="code3" name="code3" required (input)="autoFocusNext($event, 3)">
+        <input maxlength="1" type="text" pattern="[0-9]*" inputmode="numeric" class="code-box" [(ngModel)]="code4" name="code4" required (input)="autoFocusNext($event, 4)">
+        <input maxlength="1" type="text" pattern="[0-9]*" inputmode="numeric" class="code-box" [(ngModel)]="code5" name="code5" required (input)="autoFocusNext($event, 5)">
+        <input maxlength="1" type="text" pattern="[0-9]*" inputmode="numeric" class="code-box" [(ngModel)]="code6" name="code6" required>
+      </div>
+      <ion-button expand="block" class="btn-primary" type="submit">ENVIAR</ion-button>
+    </form>
+    <div class="resend">Não recebi o código! <span class="link">Reenviar</span></div>
+  </div>
+</ion-content>

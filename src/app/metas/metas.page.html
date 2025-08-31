@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Metas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nova Meta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input placeholder="Ex: Viagem, Reserva..." label="Nome da Meta"></ion-input>
+      <ion-input placeholder="Valor" type="number" label="Valor"></ion-input>
+      <ion-button expand="block" class="btn-primary">Adicionar</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let m of [1,2]">
+      <ion-label>
+        <h3>Meta Exemplo</h3>
+        <p>R$ 1.000,00 até Dez/2025</p>
+      </ion-label>
+      <ion-progress-bar value="0.4" color="primary"></ion-progress-bar>
+    </ion-item>
+  </ion-list>
+</ion-content>

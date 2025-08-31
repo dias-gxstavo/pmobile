@@ -1,0 +1,26 @@
+.splash-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #181828;
+}
+.splash-logo-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.splash-logo {
+  background: #fff;
+  color: #181828;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+}
