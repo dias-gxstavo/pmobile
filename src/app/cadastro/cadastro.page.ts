@@ -17,9 +17,10 @@ export class CadastroPage {
   email = '';
   constructor(private router: Router) {}
   enviar() {
-    this.router.navigateByUrl('/boasvindas', { state: { nome: this.nome } });
+    // Após cadastro, redireciona para verificação de SMS, passando o celular
+    this.router.navigateByUrl('/verify', { state: { phone: this.celular, nome: this.nome, email: this.email } });
   }
   goBack() {
-    this.router.navigateByUrl('/verify');
+    this.router.navigateByUrl('/onboarding');
   }
 }

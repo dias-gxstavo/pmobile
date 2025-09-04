@@ -1,23 +1,127 @@
+
 ion-toolbar {
   --background: #181828;
   --color: #fff;
 }
-.gastos-filter {
+.gastos-content {
+  background: #120f1e;
+}
+.gastos-topbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0 8px 0;
+}
+.gastos-toggle-group {
+  background: #232336;
+  border-radius: 16px;
+  display: flex;
+  gap: 0;
+  padding: 4px;
+}
+.toggle-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #bdbdbd;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 8px 24px;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+.toggle-btn.active {
+  background: #6C47FF;
+  color: #fff;
+}
+.gastos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 12px 80px 12px;
+}
+.gasto-card {
+  background: #181828;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #0002;
+  display: flex;
+  align-items: center;
+  padding: 16px 14px;
+  gap: 14px;
+}
+.gasto-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.gasto-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gasto-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gasto-title {
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+.gasto-valor {
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+.gasto-valor.negativo {
+  color: #ff4d4f;
+}
+.gasto-valor.positivo {
+  color: #4caf50;
+}
+.gasto-meta-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px;
 }
-ion-list {
-  margin-top: 8px;
+.gasto-categoria {
+  color: #bdbdbd;
+  font-size: 0.98rem;
 }
-.valor {
-  font-weight: bold;
-  font-size: 1.1rem;
+.gasto-badge {
+  background: #4caf50;
+  color: #fff;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-weight: 500;
 }
-.valor.negativo {
-  color: #ff4d4f;
+.fab-add {
+  position: fixed;
+  right: 24px;
+  bottom: 90px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #6C47FF;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 4px 24px #6C47FF55;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.valor.positivo {
-  color: #4caf50;
+.fab-add:active {
+  background: #4b2fcf;
 }

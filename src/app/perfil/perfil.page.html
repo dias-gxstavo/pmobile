@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="perfil-content" fullscreen>
+  <div class="perfil-header">
+    <div class="perfil-avatar">
+      <img *ngIf="user.avatarUrl; else avatarPlaceholder" [src]="user.avatarUrl" alt="Avatar" />
+      <ng-template #avatarPlaceholder>U</ng-template>
+    </div>
+    <div class="perfil-nome">Usuário(a) Exemplo</div>
+    <div class="perfil-imagem-extra">
+      <img *ngIf="user.extraImageUrl" [src]="user.extraImageUrl" alt="Imagem do usuário" />
+    </div>
+    <div class="perfil-conquistas">
+      <ion-icon *ngFor="let c of user.conquistas" [name]="c.icon" [style.color]="c.color"></ion-icon>
+    </div>
+  </div>
+  <div class="perfil-card">
+    <button ion-button class="perfil-logout-btn">
+      <ion-icon name="settings-outline"></ion-icon>
+      Logout
+    </button>
+  </div>
+  <div class="perfil-versao">Versão 1.0</div>
+</ion-content>

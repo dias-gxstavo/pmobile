@@ -1,3 +1,16 @@
+
+<ion-modal [isOpen]="showWelcome" [initialBreakpoint]="1" [breakpoints]="[0, 1]" (didDismiss)="closeWelcome()">
+  <ng-template>
+    <div class="welcome-modal">
+      <img src="assets/logo.png" alt="Bem-vindo" class="welcome-img" />
+      <div class="welcome-title">Bem-vindo ao OrganizaDin!</div>
+      <div class="welcome-desc">Que tal começar com um tour pelos principais recursos que vão te ajudar a economizar?</div>
+      <ion-button expand="block" class="btn-primary" (click)="closeWelcome()">OK, quero ver!</ion-button>
+      <div class="welcome-cancel" (click)="closeWelcome()">Agora não</div>
+    </div>
+  </ng-template>
+</ion-modal>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>

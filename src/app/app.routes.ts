@@ -13,10 +13,7 @@ export const routes: Routes = [
     path: 'cadastro',
     loadComponent: () => import('./cadastro/cadastro.page').then(m => m.CadastroPage),
   },
-  {
-    path: 'boasvindas',
-    loadComponent: () => import('./boasvindas/boasvindas.page').then(m => m.BoasVindasPage),
-  },
+
   {
     path: 'splash',
     loadComponent: () => import('./splash/splash.page').then((m) => m.SplashPage),
@@ -40,6 +37,10 @@ export const routes: Routes = [
       {
         path: 'metas',
         loadComponent: () => import('./metas/metas.page').then((m) => m.MetasPage),
+      },
+      {
+        path: 'perfil',
+        loadComponent: () => import('./perfil/perfil.page').then((m) => m.PerfilPage),
       },
       {
         path: '',

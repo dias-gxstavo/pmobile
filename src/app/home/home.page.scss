@@ -1,3 +1,149 @@
+.dashboard-content {
+  background: #181828;
+  padding: 0 0 32px 0;
+}
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 20px 8px 20px;
+}
+.dashboard-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #6C47FF;
+  object-fit: cover;
+}
+.dashboard-greeting {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.dashboard-nome {
+  color: #6C47FF;
+  font-weight: bold;
+}
+.dashboard-graph-card {
+  background: #232336;
+  border-radius: 18px;
+  margin: 0 20px 18px 20px;
+  padding: 18px 10px 10px 10px;
+  box-shadow: 0 2px 12px #0002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+.dashboard-saldo-card {
+  background: linear-gradient(90deg, #6C47FF 60%, #232336 100%);
+  border-radius: 18px;
+  margin: 0 20px 12px 20px;
+  padding: 18px 20px;
+  color: #fff;
+  box-shadow: 0 2px 12px #0002;
+  text-align: center;
+}
+.saldo-label {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+.saldo-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 4px;
+}
+.dashboard-row {
+  display: flex;
+  gap: 12px;
+  margin: 0 20px 18px 20px;
+}
+.dashboard-mini-card {
+  flex: 1;
+  background: #232336;
+  border-radius: 14px;
+  padding: 14px 0;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 8px #0001;
+}
+.dashboard-mini-card.receitas {
+  border-left: 4px solid #4be37a;
+}
+.dashboard-mini-card.despesas {
+  border-left: 4px solid #ff4b6e;
+}
+.mini-label {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+.mini-valor {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2px;
+}
+.dashboard-actions {
+  margin: 24px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#welcome-modal-backdrop, .welcome-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18,15,30,0.82);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+ion-modal {
+  --height: auto;
+}
+.welcome-modal {
+  background: #232336;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -2px 32px 0 #00000044;
+  padding: 32px 20px 28px 20px;
+  margin: 0;
+  width: 100vw;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes welcomeUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.welcome-img {
+  width: 120px;
+  margin-bottom: 18px;
+}
+.welcome-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.welcome-desc {
+  color: #bdbdbd;
+  text-align: center;
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+}
+.welcome-cancel {
+  color: #6C47FF;
+  text-align: center;
+  font-size: 1.05rem;
+  margin-top: 16px;
+  cursor: pointer;
+  text-decoration: underline;
+}
 #container {
   text-align: center;
 

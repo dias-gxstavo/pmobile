@@ -1,4 +1,3 @@
-// Substitua pelos dados do seu projeto Firebase
 export const firebaseConfig = {
   apiKey: "SUA_API_KEY",
   authDomain: "SUA_AUTH_DOMAIN",

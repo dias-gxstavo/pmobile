@@ -1,40 +1,40 @@
+<!-- 
 <ion-header>
   <ion-toolbar>
-    <ion-title>Todas as Transações</ion-title>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Transações</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <div class="gastos-filter">
-    <ion-select placeholder="Agosto 2025">
-      <ion-select-option>Agosto 2025</ion-select-option>
-      <ion-select-option>Julho 2025</ion-select-option>
-    </ion-select>
-    <ion-button fill="outline" size="small"><ion-icon name="search-outline"></ion-icon></ion-button>
+
+<ion-content class="gastos-content" fullscreen>
+  <div class="gastos-topbar">
+    <div class="gastos-toggle-group">
+      <button class="toggle-btn receitas active">Receitas</button>
+      <button class="toggle-btn despesas">Despesas</button>
+    </div>
   </div>
-  <ion-list>
-    <ion-item *ngFor="let t of [1,2,3]">
-      <ion-avatar slot="start"><ion-icon name="cart-outline"></ion-icon></ion-avatar>
-      <ion-label>
-        <h3>Supermercado Extra</h3>
-        <p>Alimentação • 14:30</p>
-      </ion-label>
-      <div class="valor negativo">-R$ 85,40</div>
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start"><ion-icon name="car-outline"></ion-icon></ion-avatar>
-      <ion-label>
-        <h3>Uber</h3>
-        <p>Transporte • 09:15</p>
-      </ion-label>
-      <div class="valor negativo">-R$ 12,50</div>
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start"><ion-icon name="cash-outline"></ion-icon></ion-avatar>
-      <ion-label>
-        <h3>Salário Mensal</h3>
-        <p>Trabalho • 08:00</p>
-      </ion-label>
-      <div class="valor positivo">+R$ 2.500,00</div>
-    </ion-item>
-  </ion-list>
-</ion-content>
+  <div class="gastos-list">
+    <div class="gasto-card" *ngFor="let t of transacoes">
+      <div class="gasto-icon" [ngStyle]="{'background': t.iconBg}">
+        <ion-icon [name]="t.icon"></ion-icon>
+      </div>
+      <div class="gasto-info">
+        <div class="gasto-title-row">
+          <span class="gasto-title">{{ t.titulo }}</span>
+          <span class="gasto-valor" [ngClass]="{'negativo': t.tipo==='despesa', 'positivo': t.tipo==='receita'}">{{ t.tipo==='despesa' ? '-' : '+' }} R$ {{ t.valor }}</span>
+        </div>
+        <div class="gasto-meta-row">
+          <span class="gasto-categoria">{{ t.categoria }}</span>
+          <span *ngIf="t.badge" class="gasto-badge" [ngStyle]="{'background': t.badgeColor}">{{ t.badge }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="fab-add">
+    <ion-icon name="add-outline"></ion-icon>
+  </button>
+</ion-content> -->

@@ -1,21 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button fill="clear" (click)="goBack()">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-<div class="page-title">Login</div>
-<ion-content>
-  <form class="login-form" (ngSubmit)="next()">
-    <ion-input label="Celular" type="tel" [(ngModel)]="phone" name="phone" required fill="outline"></ion-input>
-    <div class="info">Um código vai ser enviado a você</div>
-    <ion-button expand="block" class="btn-primary" type="submit">PRÓXIMO</ion-button>
-  </form>
-  <div class="login-extra">
-    <span>Não tem conta?</span>
-    <a (click)="goToCadastro()">Cadastre-se</a>
+<ion-content class="login-content" fullscreen>
+  <ion-buttons class="back-btn-container">
+    <ion-button fill="clear" (click)="goBack()">
+      <span class="svg-arrow">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </ion-button>
+  </ion-buttons>
+  <div class="login-main">
+    <div class="login-img-container">
+      <img src="assets/logo.png" alt="Logo" class="login-img" />
+    </div>
+    <div class="login-bottom-card">
+      <div class="page-title">Login</div>
+      <form class="login-form" (ngSubmit)="next()">
+        <div class="input-group">
+          <label for="phone">Celular*</label>
+          <ion-input id="phone" type="tel" [(ngModel)]="phone" name="phone" required></ion-input>
+        </div>
+        <div class="info">Um código vai ser enviado a você</div>
+        <ion-button expand="block" class="btn-primary" type="submit">PRÓXIMO</ion-button>
+      </form>
+      <div class="login-extra">
+        <span>Não tem conta?</span>
+        <a (click)="goToCadastro()">Cadastre-se</a>
+      </div>
+    </div>
   </div>
 </ion-content>

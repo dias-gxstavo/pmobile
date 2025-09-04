@@ -5,5 +5,14 @@ ion-tab-bar {
   border-top: 1px solid #232336;
 }
 ion-tab-button {
-  font-size: 0.9rem;
+  font-size: 1.7rem;
 }
+ion-tab-bar ion-icon {
+  color: #fff !important;
+  --ionicon-stroke-width: 32px;
+  font-size: 2.1rem;
+}
+ion-tab-bar ion-tab-button[aria-selected="true"] ion-icon {
+  color: #6C47FF !important;
+}
+

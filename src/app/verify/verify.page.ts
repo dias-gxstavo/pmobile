@@ -20,9 +20,7 @@ export class VerifyPage {
   code6 = '';
   constructor(private router: Router) {}
   send() {
-    // Você pode juntar os códigos aqui se precisar
-    // const code = this.code1 + this.code2 + this.code3 + this.code4 + this.code5 + this.code6;
-    this.router.navigateByUrl('/cadastro');
+    this.router.navigateByUrl('/tabs/home');
   }
   goBack() {
     this.router.navigateByUrl('/login');
