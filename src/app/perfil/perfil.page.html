@@ -10,9 +10,9 @@
       <ng-template #avatarPlaceholder>U</ng-template>
     </div>
     <div class="perfil-nome">Usuário(a) Exemplo</div>
-    <div class="perfil-imagem-extra">
+    <!-- <div class="perfil-imagem-extra">
       <img *ngIf="user.extraImageUrl" [src]="user.extraImageUrl" alt="Imagem do usuário" />
-    </div>
+    </div> -->
     <div class="perfil-conquistas">
       <ion-icon *ngFor="let c of user.conquistas" [name]="c.icon" [style.color]="c.color"></ion-icon>
     </div>
