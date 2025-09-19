@@ -10,13 +10,5 @@ import { IonContent, IonHeader, IonToolbar, IonTitle, IonButton, IonIcon } from 
   imports: [CommonModule, IonContent, IonHeader, IonToolbar, IonTitle, IonButton, IonIcon],
 })
 export class PerfilPage {
-  user = {
-    nome: 'Usuário(a)',
-    avatarUrl: 'assets/icon/484.png',
-    conquistas: [
-      { icon: 'medal-outline', color: '#bdbdbd' },
-      { icon: 'star-outline', color: '#bdbdbd' },
-      { icon: 'trophy-outline', color: '#bdbdbd' },
-    ]
-  };
+ 
 }

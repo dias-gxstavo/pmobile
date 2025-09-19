@@ -1,16 +1,24 @@
+
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonModal } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonModal],
+  imports: [IonicModule]
 })
 export class HomePage {
-  showWelcome = true;
-  nome = '';
-  closeWelcome() {
-    this.showWelcome = false;
+  nomeUsuario: string = 'Nome Usuário';
+  showReceita: boolean = true;
+  showDespesa: boolean = true;
+
+  toggleReceita() {
+    this.showReceita = !this.showReceita;
+  }
+
+  toggleDespesa() {
+    this.showDespesa = !this.showDespesa;
   }
 }

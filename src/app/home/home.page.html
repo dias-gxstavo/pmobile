@@ -1,33 +1,75 @@
 
-<ion-modal [isOpen]="showWelcome" [initialBreakpoint]="1" [breakpoints]="[0, 1]" (didDismiss)="closeWelcome()">
-  <ng-template>
-    <div class="welcome-modal">
-      <img src="assets/logo.png" alt="Bem-vindo" class="welcome-img" />
-      <div class="welcome-title">Bem-vindo ao OrganizaDin!</div>
-      <div class="welcome-desc">Que tal começar com um tour pelos principais recursos que vão te ajudar a economizar?</div>
-      <ion-button expand="block" class="btn-primary" (click)="closeWelcome()">OK, quero ver!</ion-button>
-      <div class="welcome-cancel" (click)="closeWelcome()">Agora não</div>
+<ion-content>
+  <div class="top-bar">
+    <ion-tab-button tab="perfil">
+      <img src="assets/icon/finance.svg" alt="Avatar" class="avatar" />
+    </ion-tab-button>
+    <span class="welcome-name">Olá, [nome]</span>
+  </div>
+
+  <div class="totals-row">
+    <div class="total-card">
+      <div class="card-header">
+        <ion-icon name="card-outline" class="card-icon"></ion-icon>
+        <span class="card-title">RECEITA</span>
+      </div>
+      <div class="card-value-row">
+        <span class="currency">R$</span>
+        <span class="card-value" *ngIf="showReceita">.....,..</span>
+        <span class="card-value" *ngIf="!showReceita">••••••</span>
+        <button class="hide-btn" (click)="toggleReceita()">
+          <ion-icon [name]="showReceita ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+        </button>
+      </div>
     </div>
-  </ng-template>
-</ion-modal>
+    <div class="total-card">
+      <div class="card-header">
+        <ion-icon name="card-outline" class="card-icon"></ion-icon>
+        <span class="card-title">DESPESA</span>
+      </div>
+      <div class="card-value-row">
+        <span class="currency">R$</span>
+        <span class="card-value" *ngIf="showDespesa">.....,..</span>
+        <span class="card-value" *ngIf="!showDespesa">••••••</span>
+        <button class="hide-btn" (click)="toggleDespesa()">
+          <ion-icon [name]="showDespesa ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
 
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="gastos-section">
+    <h2 class="gastos-title">Gastos</h2>
+    <div class="gastos-card">
+      <div class="gastos-header">
+        <span class="gastos-total-label">Total</span>
+      </div>
+      <div class="gastos-list">
+        <div class="gasto-item">
+          <span class="gasto-label">Moradia</span>
+          <span class="gasto-btn moradia">... Itens</span>
+        </div>
+        <div class="gasto-item">
+          <span class="gasto-label">Alimentação</span>
+          <span class="gasto-btn alimentacao">... Itens</span>
+        </div>
+        <div class="gasto-item">
+          <span class="gasto-label">Transporte</span>
+          <span class="gasto-btn transporte">... Itens</span>
+        </div>
+        <div class="gasto-item">
+          <span class="gasto-label">Outras despesas</span>
+          <span class="gasto-btn outras">... Itens</span>
+        </div>
+      </div>
+      <div class="gastos-add-btn">
+        <ion-icon name="add-outline"></ion-icon>
+      </div>
+      <div class="gastos-chart-placeholder">
+        <div class="chart-box">
+          <span class="chart-placeholder-text">Gráfico</span>
+        </div>
+      </div>
+    </div>
   </div>
 </ion-content>
