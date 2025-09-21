@@ -1,6 +1,8 @@
 
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +12,19 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule]
 })
 export class HomePage {
-  nomeUsuario: string = 'Nome Usuário';
+  constructor(public userService: UserService, private router: Router) {}
+
+  goPerfil() {
+    this.router.navigateByUrl('/tabs/perfil');
+  }
+
+  get avatarUrl() {
+    return this.userService.avatarUrl;
+  }
+  get nome() {
+    return this.userService.nome;
+  }
+
   showReceita: boolean = true;
   showDespesa: boolean = true;
 

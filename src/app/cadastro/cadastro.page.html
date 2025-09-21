@@ -9,26 +9,35 @@
     </ion-button>
   </ion-buttons>
   <div class="cadastro-main">
-    <div class="cadastro-img-container">
-      <img src="assets/logo.png" alt="Logo" class="cadastro-img" />
-    </div>
     <div class="cadastro-bottom-card">
-      <div class="page-title">Cadastre-se</div>
+      <div class="cadastro-title">Crie sua conta</div>
+      <div class="cadastro-subtitle">Crie uma conta para gerir seu dinheiro de maneira intuitiva!</div>
       <form class="cadastro-form" (ngSubmit)="enviar()">
         <div class="input-group">
-          <label for="nome">Nome*</label>
-          <ion-input id="nome" [(ngModel)]="nome" name="nome" required></ion-input>
-        </div>
-        <div class="input-group">
-          <label for="celular">Celular*</label>
-          <ion-input id="celular" [(ngModel)]="celular" name="celular" required></ion-input>
-        </div>
-        <div class="input-group">
           <label for="email">Email</label>
-          <ion-input id="email" [(ngModel)]="email" name="email" type="email"></ion-input>
+          <ion-input id="email" [(ngModel)]="email" name="email" type="email" placeholder="Digite seu email" required></ion-input>
         </div>
-        <ion-button expand="block" class="btn-primary" type="submit">ENVIAR</ion-button>
+        <div class="input-group">
+          <label for="senha">Senha (mínimo de 6 caracteres)</label>
+          <ion-input id="senha" [(ngModel)]="senha" name="senha" type="password" placeholder="Crie uma senha" minlength="6" required></ion-input>
+          <ion-icon name="eye-outline" class="input-eye"></ion-icon>
+        </div>
+        <ion-button expand="block" class="btn-primary" type="submit" [disabled]="!email || !senha || senha.length < 6">Continuar</ion-button>
       </form>
+      <div class="cadastro-termos">
+        Ao criar sua conta você concorda com nossos <a href="#" class="cadastro-link">Termos de Uso</a> e <a href="#" class="cadastro-link">Políticas de Privacidade</a>
+      </div>
+      <div class="cadastro-ou">
+        <div class="linha"></div>
+        <span>ou</span>
+        <div class="linha"></div>
+      </div>
+      <div class="cadastro-social">
+        <button class="social-btn google"><ion-icon name="logo-google"></ion-icon></button>
+      </div>
+      <div class="cadastro-login">
+        Já tem uma conta? <a class="cadastro-link" (click)="goLogin()">Fazer login</a>
+      </div>
     </div>
   </div>
 </ion-content>

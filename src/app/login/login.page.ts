@@ -12,15 +12,23 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule, IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonButton, IonIcon, IonButtons],
 })
 export class LoginPage {
-  phone = '';
+  email = '';
+  senha = '';
   constructor(private router: Router) {}
   next() {
-    this.router.navigateByUrl('/verify', { state: { phone: this.phone } });
+    // Aqui você pode implementar a lógica de login
+    // Exemplo: this.authService.login(this.email, this.senha)
+    // Redireciona após login
+    this.router.navigateByUrl('/home');
   }
   goBack() {
     this.router.navigateByUrl('/onboarding');
   }
   goToCadastro() {
     this.router.navigateByUrl('/cadastro');
+  }
+  forgotPassword() {
+    // Implemente a navegação ou lógica de recuperação de senha
+    alert('Recuperação de senha não implementada.');
   }
 }

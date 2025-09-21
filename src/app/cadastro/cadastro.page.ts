@@ -15,12 +15,15 @@ export class CadastroPage {
   nome = '';
   celular = '';
   email = '';
+  senha = '';
   constructor(private router: Router) {}
   enviar() {
-    // Após cadastro, redireciona para verificação de SMS, passando o celular
     this.router.navigateByUrl('/verify', { state: { phone: this.celular, nome: this.nome, email: this.email } });
   }
   goBack() {
     this.router.navigateByUrl('/onboarding');
+  }
+  goLogin() {
+    this.router.navigateByUrl('/login');
   }
 }

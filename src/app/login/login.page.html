@@ -1,3 +1,4 @@
+
 <ion-content class="login-content" fullscreen>
   <ion-buttons class="back-btn-container">
     <ion-button fill="clear" (click)="goBack()">
@@ -13,18 +14,35 @@
       <img src="assets/logo.png" alt="Logo" class="login-img" />
     </div>
     <div class="login-bottom-card">
-      <div class="page-title">Login</div>
+      <div class="login-title">Bem vindo novamente!</div>
+      <div class="login-subtitle">Acesse sua conta</div>
       <form class="login-form" (ngSubmit)="next()">
         <div class="input-group">
-          <label for="phone">Celular*</label>
-          <ion-input id="phone" type="tel" [(ngModel)]="phone" name="phone" required></ion-input>
+          <label for="email">Email</label>
+          <ion-input id="email" [(ngModel)]="email" name="email" type="email" placeholder="Digite seu email" required></ion-input>
         </div>
-        <div class="info">Um código vai ser enviado a você</div>
-        <ion-button expand="block" class="btn-primary" type="submit">PRÓXIMO</ion-button>
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <ion-input id="senha" [(ngModel)]="senha" name="senha" type="password" placeholder="Digite a senha" required></ion-input>
+          <ion-icon name="eye-outline" class="input-eye"></ion-icon>
+        </div>
+        <div class="login-forgot">
+          <a class="login-link" (click)="forgotPassword()">Esqueci minha senha</a>
+        </div>
+        <ion-button expand="block" class="btn-primary" type="submit" [disabled]="!email || !senha">Continuar</ion-button>
       </form>
-      <div class="login-extra">
-        <span>Não tem conta?</span>
-        <a (click)="goToCadastro()">Cadastre-se</a>
+      <div class="login-ou">
+        <div class="linha"></div>
+        <span>ou</span>
+        <div class="linha"></div>
+      </div>
+      <div class="login-social">
+        <button class="social-btn google"><ion-icon name="logo-google"></ion-icon></button>
+        <button class="social-btn facebook"><ion-icon name="logo-facebook"></ion-icon></button>
+        <button class="social-btn apple"><ion-icon name="logo-apple"></ion-icon></button>
+      </div>
+      <div class="login-cadastro">
+        <a class="login-link" (click)="goToCadastro()">Criar conta</a>
       </div>
     </div>
   </div>

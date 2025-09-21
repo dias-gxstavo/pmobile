@@ -1,13 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="perfil-logout-container">
+  <button type="button" class="perfil-logout-btn" (click)="logout()">Logout</button>
+</div>
+
 <ion-content class="perfil-content" fullscreen>
-  <div class="perfil-header">
-    <div class="perfil-avatar">
-      <img src="assets/icon/finance.svg" alt="Avatar" class="avatar" />
+  <form class="perfil-form" (ngSubmit)="salvar()">
+    <div class="perfil-avatar-edit">
+      <div class="avatar-wrapper">
+        <ng-container *ngIf="avatarUrl; else defaultAvatar">
+          <img [src]="avatarUrl" alt="Avatar" class="avatar-img" />
+        </ng-container>
+        <ng-template #defaultAvatar>
+          <div class="avatar-default">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#222"/><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2c-3.33 0-6 1.34-6 3v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1c0-1.66-2.67-3-6-3z" fill="#00e676"/></svg>
+          </div>
+        </ng-template>
+      </div>
+      <label class="alterar-foto-btn">
+        Alterar foto
+        <input type="file" accept="image/*" hidden (change)="onFotoSelecionada($event)" />
+      </label>
     </div>
-    <div class="perfil-nome">Usuário</div>
-  </div>
+    <div class="input-group">
+      <label for="nome">Nome</label>
+      <div class="input-icon-group">
+        <span class="input-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2c-3.33 0-6 1.34-6 3v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1c0-1.66-2.67-3-6-3z" fill="#bdbdbd"/></svg>
+        </span>
+        <ion-input id="nome" [(ngModel)]="nome" name="nome" placeholder="Nome"></ion-input>
+      </div>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <div class="input-icon-group">
+        <span class="input-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" fill="#bdbdbd"/><path d="M22 6l-10 7L2 6" stroke="#181828" stroke-width="2"/></svg>
+        </span>
+        <ion-input id="email" [(ngModel)]="email" name="email" type="email" placeholder="Email"></ion-input>
+      </div>
+    </div>
+    <div class="input-group">
+      <label for="senha">Senha</label>
+      <div class="input-icon-group">
+        <span class="input-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="6" y="10" width="12" height="8" rx="2" fill="#bdbdbd"/><path d="M12 14v2" stroke="#181828" stroke-width="2"/><circle cx="12" cy="13" r="2" fill="#181828"/></svg>
+        </span>
+        <ion-input id="senha" [(ngModel)]="senha" name="senha" type="password" placeholder="Senha"></ion-input>
+      </div>
+    </div>
+    <button type="submit" class="salvar-btn">Salvar alterações</button>
+
+    <div class="perfil-logout-container">
+      <button type="button" class="perfil-logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </form>
 </ion-content>

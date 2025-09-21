@@ -26,14 +26,6 @@
   justify-content: flex-end;
 }
 
-.cadastro-img-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex: 1 1 auto;
-  min-height: 180px;
-  margin-top: 32px;
-}
 .cadastro-img {
   width: 120px;
   max-width: 60vw;
@@ -55,13 +47,144 @@
   align-items: center;
 }
 
-.page-title {
+
+.cadastro-title {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-top: 0;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
   color: #fff;
+}
+
+.cadastro-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  margin-bottom: 22px;
+}
+
+.cadastro-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+.input-group label {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+ion-input {
+  --background: #181828;
+  --color: #fff;
+  --border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  border: 1.5px solid #333;
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+ion-input.sc-ion-input-md-h {
+  box-shadow: none;
+}
+ion-input:focus-within {
+  border: 1.5px solid #6C47FF;
+}
+
+.input-eye {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  font-size: 1.3em;
+  color: #bdbdbd;
+  cursor: pointer;
+}
+
+.btn-primary {
+  --background: #6C47FF;
+  --color: #fff;
+  --border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.cadastro-termos {
+  font-size: 0.95rem;
+  color: #bdbdbd;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+.cadastro-link {
+  color: #00e676;
+  text-decoration: none;
+  font-weight: 500;
+}
+.cadastro-ou {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0 12px 0;
+}
+.cadastro-ou .linha {
+  flex: 1;
+  height: 1.5px;
+  background: #333;
+  border-radius: 2px;
+}
+.cadastro-ou span {
+  color: #bdbdbd;
+  font-size: 1rem;
+}
+.cadastro-social {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 18px;
+}
+.social-btn {
+  background: transparent;
+  border: 1.5px solid #333;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7em;
+  color: #fff;
+  transition: border 0.2s;
+}
+.social-btn.google {
+  color: #ea4335;
+}
+.social-btn.facebook {
+  color: #1877f3;
+}
+.social-btn.apple {
+  color: #fff;
+}
+.social-btn:active, .social-btn:focus {
+  border: 1.5px solid #6C47FF;
+}
+.cadastro-login {
+  text-align: center;
+  font-size: 1rem;
+  color: #bdbdbd;
+  margin-top: 8px;
 }
 
 .cadastro-form {
