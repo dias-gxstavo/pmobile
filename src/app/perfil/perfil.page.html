@@ -5,15 +5,10 @@
 <ion-content class="perfil-content" fullscreen>
   <form class="perfil-form" (ngSubmit)="salvar()">
     <div class="perfil-avatar-edit">
-      <div class="avatar-wrapper">
-        <ng-container *ngIf="avatarUrl; else defaultAvatar">
-          <img [src]="avatarUrl" alt="Avatar" class="avatar-img" />
-        </ng-container>
-        <ng-template #defaultAvatar>
-          <div class="avatar-default">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#222"/><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2c-3.33 0-6 1.34-6 3v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1c0-1.66-2.67-3-6-3z" fill="#00e676"/></svg>
-          </div>
-        </ng-template>
+      <div class="perfil-icone-perfil">
+        <div class="perfil-circulo">
+          <ion-icon name="person" class="perfil-icon-user"></ion-icon>
+        </div>
       </div>
       <label class="alterar-foto-btn">
         Alterar foto

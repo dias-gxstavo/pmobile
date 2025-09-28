@@ -43,6 +43,10 @@ export const routes: Routes = [
         loadComponent: () => import('./perfil/perfil.page').then((m) => m.PerfilPage),
       },
       {
+        path: 'feed',
+        loadComponent: () => import('./feed/feed.page').then( m => m.FeedPage)
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
@@ -54,4 +58,5 @@ export const routes: Routes = [
     redirectTo: 'splash',
     pathMatch: 'full',
   },
+  
 ];

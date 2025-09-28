@@ -1,3 +1,23 @@
+.perfil-icone-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.perfil-circulo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #217a43;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.perfil-icon-user {
+  font-size: 2.6rem;
+  color: #217a43;
+}
 
 .perfil-content {
   background: #181828;
@@ -60,7 +80,7 @@
 }
 
 .input-group {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -103,7 +123,7 @@ ion-input:focus-within {
   outline: none;
 }
 .salvar-btn {
-  width: 100%;
+  width: 90%;
   background: transparent;
   color: #00e676;
   border: 2px solid #00e676;

@@ -1,3 +1,118 @@
+.perfil-bar-refatorada {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 24px 0 0 24px;
+}
+.perfil-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+}
+.perfil-circulo {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #217a43;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.perfil-icon-user {
+  font-size: 2.6rem;
+  color: #217a43;
+}
+.perfil-nome-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.perfil-saudacao {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+.perfil-nome {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  margin-top: -10px;
+}
+.new-totals-row {
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  margin: 3px 0 0 0;
+}
+.new-total-card {
+  display: flex;
+  align-items: left;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  min-width: 150px;
+}
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  font-size: 2.1rem;
+}
+.icon-circle.receita {
+  background: #4be37a;
+  color: #fff;
+}
+.icon-circle.despesa {
+  background: #ff4b6e;
+  color: #fff;
+}
+.new-total-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.new-total-title {
+  font-size: 1.05rem;
+  color: #bdbdbd;
+  margin-bottom: 2px;
+}
+.new-total-value {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.new-total-card.receita .currency,
+.new-total-card.receita .card-value {
+  color: #4be37a;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.new-total-card.despesa .currency,
+.new-total-card.despesa .card-value {
+  color: #ff4b6e;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.hide-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0 0 8px;
+  display: flex;
+  align-items: center;
+  color: #bdbdbd;
+}
 .home-perfil-bar {
   display: flex;
   flex-direction: column;
@@ -12,7 +127,7 @@
   border-radius: 50%;
   background: #222;
   border: 3px solid #00e676;
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 0;
@@ -54,7 +169,7 @@
   color: #fff;
 }
 .gastos-card {
-  background: #f7f7fa;
+  background: #18182e;
   border-radius: 8px;
   box-shadow: 0 2px 8px #6C47FF22;
   padding: 18px 18px 12px 18px;
@@ -70,7 +185,7 @@
 .gastos-total-label {
   font-size: 1.05rem;
   font-weight: 500;
-  color: #232336;
+  color: #fcfcfc;
 }
 .gastos-total-value {
   font-size: 1.05rem;
@@ -89,7 +204,7 @@
 }
 .gasto-label {
   font-size: 1rem;
-  color: #232336;
+  color: #ffffff;
 }
 .gasto-btn {
   font-size: 0.95rem;
@@ -108,7 +223,7 @@
   background: #448AFF;
 }
 .gasto-btn.transporte {
-  background: #232336;
+  background: #d80c0c;
 }
 .gasto-btn.outras {
   background: #232336;
@@ -146,8 +261,8 @@
 .totals-row {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-top: 18px;
+  gap: 15px;
+  margin-top: 25px;
 }
 .total-card {
   background: #fff;
@@ -180,7 +295,7 @@
 .card-value-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   margin-top: 2px;
 }
 .currency {

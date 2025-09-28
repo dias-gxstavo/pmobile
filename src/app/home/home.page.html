@@ -1,51 +1,49 @@
 
 <ion-content>
 
-  <div class="home-perfil-bar">
-    <button class="avatar-wrapper" (click)="goPerfil()">
-      <ng-container *ngIf="avatarUrl; else defaultAvatar">
-        <img [src]="avatarUrl" alt="Avatar" class="avatar-img" />
-      </ng-container>
-      <ng-template #defaultAvatar>
-        <div class="avatar-default">
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="12" fill="#222"/>
-            <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="#bdbdbd"/>
-            <path d="M12 14c-3.33 0-6 1.34-6 3v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1c0-1.66-2.67-3-6-3z" fill="#00e676"/>
-          </svg>
-        </div>
-      </ng-template>
+  <div class="perfil-bar-refatorada">
+    <button class="perfil-icone" (click)="goPerfil()">
+      <div class="perfil-circulo">
+        <ion-icon name="person" class="perfil-icon-user"></ion-icon>
+      </div>
     </button>
-    <span class="welcome-name">Olá, {{nome || '[nome]'}} </span>
+    <div class="perfil-nome-area">
+      <span class="perfil-saudacao">Olá,</span><br>
+      <span class="perfil-nome">{{nome || '[nome].'}} </span>
+    </div>
   </div>
 
-  <div class="totals-row">
-    <div class="total-card">
-      <div class="card-header">
-        <ion-icon name="card-outline" class="card-icon"></ion-icon>
-        <span class="card-title">RECEITA</span>
+  <div class="totals-row new-totals-row">
+    <div class="new-total-card receita">
+      <div class="icon-circle receita">
+        <ion-icon name="arrow-up-outline"></ion-icon>
       </div>
-      <div class="card-value-row">
-        <span class="currency">R$</span>
-        <span class="card-value" *ngIf="showReceita">.....,..</span>
-        <span class="card-value" *ngIf="!showReceita">••••••</span>
-        <button class="hide-btn" (click)="toggleReceita()">
-          <ion-icon [name]="showReceita ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
-        </button>
+      <div class="new-total-info">
+        <span class="new-total-title">Ganhos</span>
+        <div class="new-total-value">
+          <span class="currency">R$</span>
+          <span class="card-value" *ngIf="showReceita">0,00</span>
+          <span class="card-value" *ngIf="!showReceita">••••••</span>
+          <button class="hide-btn" (click)="toggleReceita()">
+            <ion-icon [name]="showReceita ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="total-card">
-      <div class="card-header">
-        <ion-icon name="card-outline" class="card-icon"></ion-icon>
-        <span class="card-title">DESPESA</span>
+    <div class="new-total-card despesa">
+      <div class="icon-circle despesa">
+        <ion-icon name="arrow-down-outline"></ion-icon>
       </div>
-      <div class="card-value-row">
-        <span class="currency">R$</span>
-        <span class="card-value" *ngIf="showDespesa">.....,..</span>
-        <span class="card-value" *ngIf="!showDespesa">••••••</span>
-        <button class="hide-btn" (click)="toggleDespesa()">
-          <ion-icon [name]="showDespesa ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
-        </button>
+      <div class="new-total-info">
+        <span class="new-total-title">Gastos</span>
+        <div class="new-total-value">
+          <span class="currency">R$</span>
+          <span class="card-value" *ngIf="showDespesa">0,00</span>
+          <span class="card-value" *ngIf="!showDespesa">••••••</span>
+          <button class="hide-btn" (click)="toggleDespesa()">
+            <ion-icon [name]="showDespesa ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -59,19 +57,19 @@
       <div class="gastos-list">
         <div class="gasto-item">
           <span class="gasto-label">Moradia</span>
-          <span class="gasto-btn moradia">... Itens</span>
+          <span class="gasto-btn moradia"></span>
         </div>
         <div class="gasto-item">
           <span class="gasto-label">Alimentação</span>
-          <span class="gasto-btn alimentacao">... Itens</span>
+          <span class="gasto-btn alimentacao"></span>
         </div>
         <div class="gasto-item">
           <span class="gasto-label">Transporte</span>
-          <span class="gasto-btn transporte">... Itens</span>
+          <span class="gasto-btn transporte"></span>
         </div>
         <div class="gasto-item">
-          <span class="gasto-label">Outras despesas</span>
-          <span class="gasto-btn outras">... Itens</span>
+          <span class="gasto-label">Outras</span>
+          <span class="gasto-btn outras"></span>
         </div>
       </div>
       <div class="gastos-add-btn">
