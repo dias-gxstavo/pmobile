@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon} from '@ionic/angular/standalone';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -9,7 +9,7 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'feed.page.html',
   styleUrls: ['feed.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonicModule, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, CommonModule, FormsModule]
 })
 export class FeedPage implements OnInit {
   noticias: Array<{

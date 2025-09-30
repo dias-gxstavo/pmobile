@@ -1,14 +1,49 @@
-<ion-header>
-</ion-header>
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Nova Meta</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-input placeholder="Ex: Viagem, Reserva..." label="Nome da Meta"></ion-input>
-      <ion-input placeholder="Valor" type="number" label="Valor"></ion-input>
-      <ion-button expand="block" class="btn-primary">Adicionar</ion-button>
-    </ion-card-content>
-  </ion-card>
+<ion-content class="metas-content">
+  <div class="metas-header">
+    <h1 class="metas-title">Metas Financeiras</h1>
+  </div>
+
+  <div class="resumo-geral-card">
+    <div class="resumo-header">
+      <span class="resumo-title">Resumo Geral</span>
+      <button class="resumo-add-btn">+</button>
+    </div>
+    <div class="resumo-info">
+      <div class="resumo-metas">
+        <span class="resumo-metas-num">X</span>
+        <span class="resumo-metas-label">METAS ATIVAS</span>
+      </div>
+      <div class="resumo-progress">
+        <span class="resumo-progress-num">X</span>
+        <span class="resumo-progress-label">PROGRESSO MÉDIO</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="metas-section-title">Suas Metas</h2>
+  <div class="metas-list">
+    <div class="meta-card">
+      <div class="meta-info">
+        <span class="meta-title">Reserva de Emergência</span>
+        <span class="meta-goal">Meta: R$ 15.000</span>
+        <span class="meta-saved">R$ 12.750 economizados</span>
+        <div class="meta-progress-bar">
+          <div class="meta-progress" style="width:85%; background:#E94F4F"></div>
+        </div>
+      </div>
+    </div>
+    <div class="meta-card">
+      <div class="meta-info">
+        <span class="meta-title">Viagem para Europa</span>
+        <span class="meta-goal">Meta: R$ 8.000</span>
+        <span class="meta-saved" style="color:#3DC47E">R$ 3.200 economizados</span>
+        <div class="meta-progress-bar">
+          <div class="meta-progress" style="width:40%; background:#F7B500"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="add-meta-btn">
+    Adicionar nova meta
+  </button>
 </ion-content>

@@ -1,35 +1,41 @@
 <ion-content class="feed-content">
   <div class="feed-header">
-    <h1 class="feed-title">Notícias</h1>
-    <p class="feed-subtitle">Economia, educação financeira e mais</p>
+    <div class="feed-title-row">
+      <ion-icon name="newspaper-outline" class="feed-title-icon"></ion-icon>
+      <h1 class="feed-title">Notícias Financeiras</h1>
+    </div>
+    <div class="feed-search-row">
+      <input class="feed-search" type="text" placeholder="Buscar notícias..." />
+    </div>
+  </div>
+
+  <div class="feed-categories">
+    <button class="feed-category active">Todas</button>
+    <button class="feed-category">Economia</button>
+    <button class="feed-category">Investimentos</button>
+    <button class="feed-category">Mercado</button>
+    <button class="feed-category">Educação</button>
+  </div>
+
+  <div class="feed-highlight">
+    <div class="highlight-label">EM ALTA HOJE</div>
+    <div class="highlight-title">Principais tendências do mercado financeiro brasileiro</div>
+    <div class="highlight-info">Portal Principal • Há 1 hora</div>
+    <ion-icon name="chevron-forward-outline" class="highlight-arrow"></ion-icon>
   </div>
 
   <div class="news-feed">
     <div class="news-card" *ngFor="let noticia of noticias">
-      <div class="news-img" *ngIf="noticia.imagem">
-        <img [src]="noticia.imagem" alt="Imagem da notícia" />
+      <div class="news-card-icon">
+        <ion-icon name="logo-usd"></ion-icon>
       </div>
-      <div class="news-content">
-        <h2 class="news-title">{{noticia.titulo || 'Título da notícia'}}</h2>
-        <p class="news-desc">{{noticia.descricao || 'Resumo da notícia ou chamada principal.'}}</p>
-        <span class="news-date">{{noticia.data || 'Hoje'}}</span>
+      <div class="news-card-content">
+        <div class="news-card-category">Economia</div>
+        <div class="news-card-title">{{noticia.titulo || 'Título da notícia sobre economia e finanças pessoais'}}</div>
+        <div class="news-card-source">Portal de Notícias</div>
+        <div class="news-card-date">Há 2 horas</div>
       </div>
-    </div>
-
-    <div class="news-placeholder" *ngIf="!noticias || noticias.length === 0">
-      <ion-icon name="newspaper-outline" class="news-placeholder-icon"></ion-icon>
-      <p class="news-placeholder-text">Nenhuma notícia disponível no momento.</p>
     </div>
   </div>
-</ion-content>
-<ion-header [translucent]="true">
- 
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">feed</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <button class="feed-load-more">Carregar mais notícias</button>

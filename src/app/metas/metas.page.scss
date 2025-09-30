@@ -1,8 +1,158 @@
-ion-toolbar {
-  --background: #181828;
-  --color: #fff;
+.add-meta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 34px auto 18px auto;
+  background: linear-gradient(90deg, #6C47FF 0%, #7F5AFF 100%);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 12px 32px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 2px 12px #6C47FF22;
+  cursor: pointer;
 }
-ion-card {
-  margin: 16px;
+
+.metas-content {
+  --background: linear-gradient(180deg, #18182e 0%, #181828 100%);
+  min-height: 100vh;
+  color: #fff;
+}
+.metas-header {
+  background: linear-gradient(90deg, #20202e 0%, #18182e 100%);
+  padding: 24px 18px 18px 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+.metas-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.metas-subtitle {
+  font-size: 1.05rem;
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+.resumo-geral-card {
+  background: #fff;
+  color: #232336;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #6C47FF22;
+  margin: 18px;
+  padding: 18px 18px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.resumo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.resumo-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.resumo-add-btn {
+  background: #6C47FF;
+  color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.5rem;
+  border: none;
+  box-shadow: 0 2px 8px #6C47FF22;
+  cursor: pointer;
+}
+.resumo-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.resumo-metas, .resumo-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resumo-metas-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6C47FF;
+}
+.resumo-metas-label {
+  font-size: 0.95rem;
+  color: #bdbdbd;
+}
+.resumo-progress-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6C47FF;
+}
+.resumo-progress-label {
+  font-size: 0.95rem;
+  color: #bdbdbd;
+}
+.metas-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 18px 0 8px 18px;
+}
+.metas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 18px 24px 18px;
+}
+.meta-card {
+  background: transparent;
+  color: #e8e8eb;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px #6C47FF22;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 16px;
+  gap: 12px;
+}
+
+.meta-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.meta-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.meta-goal {
+  font-size: 0.95rem;
+  color: #bdbdbd;
+}
+.meta-saved {
+  font-size: 0.95rem;
+  color: #E94F4F;
+  font-weight: 600;
+}
+.meta-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #F7F7FF;
+  border-radius: 4px;
+  margin-top: 6px;
+  position: relative;
+}
+.meta-progress {
+  height: 100%;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
