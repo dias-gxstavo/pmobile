@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonButton, IonIcon, IonButtons } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +15,16 @@ import { FormsModule } from '@angular/forms';
 export class LoginPage {
   email = '';
   senha = '';
-  constructor(private router: Router) {}
+  constructor(private router: Router, private userService: UserService) {}
   next() {
-    // Aqui você pode implementar a lógica de login
-    // Exemplo: this.authService.login(this.email, this.senha)
-    // Redireciona após login
-    this.router.navigateByUrl('/home');
+    if (!this.email || !this.senha) {
+      alert('Informe email e senha (mock)');
+      return;
+    }
+    // mock login
+    this.userService.mockLogin(this.email);
+    // navegar para tabs/home (ajuste conforme suas rotas)
+    this.router.navigateByUrl('/tabs/home');
   }
   goBack() {
     this.router.navigateByUrl('/onboarding');
