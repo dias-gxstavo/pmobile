@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   IonHeader,
@@ -38,65 +38,43 @@ import {
 })
 export class GastosPage {
   transacoes = [
-    {
-      titulo: 'Compras Online',
-      categoria: 'Alimentação',
-      valor: '80,00',
-      tipo: 'despesa',
-      icon: 'cart-outline',
-      iconBg: '#6C47FF',
-      badge: '',
-      badgeColor: ''
-    },
-    {
-      titulo: 'Café de Emergência',
-      categoria: 'Alimentação',
-      valor: '80,00',
-      tipo: 'receita',
-      icon: 'cafe-outline',
-      iconBg: '#6C47FF',
-      badge: 'Alimentação',
-      badgeColor: '#4caf50'
-    },
-    {
-      titulo: 'Almoot Deartenta',
-      categoria: 'Alimentação',
-      valor: '80,00',
-      tipo: 'despesa',
-      icon: 'restaurant-outline',
-      iconBg: '#6C47FF',
-      badge: '',
-      badgeColor: ''
-    },
-    {
-      titulo: 'Almoço da Emergência',
-      categoria: 'Alimentação',
-      valor: '80,00',
-      tipo: 'despesa',
-      icon: 'fast-food-outline',
-      iconBg: '#6C47FF',
-      badge: '',
-      badgeColor: ''
-    },
-    {
-      titulo: 'Reserva da Cortesia',
-      categoria: 'Alimentação',
-      valor: '50,00',
-      tipo: 'receita',
-      icon: 'gift-outline',
-      iconBg: '#6C47FF',
-      badge: 'Alimentação',
-      badgeColor: '#4caf50'
-    },
-    {
-      titulo: 'Salário',
-      categoria: 'Trabalho',
-      valor: '50,00',
-      tipo: 'despesa',
-      icon: 'cash-outline',
-      iconBg: '#6C47FF',
-      badge: '',
-      badgeColor: ''
-    }
+    { titulo: 'Supermercado', categoria: 'Alimentação', valor: 250.75, tipo: 'despesa', data: '2025-10-05' },
+    { titulo: 'Café', categoria: 'Alimentação', valor: 8.5, tipo: 'despesa', data: '2025-10-06' },
+    { titulo: 'Salário', categoria: 'Renda', valor: 3500.0, tipo: 'receita', data: '2025-10-01' },
+    { titulo: 'Transporte', categoria: 'Transporte', valor: 45.0, tipo: 'despesa', data: '2025-09-28' },
+    { titulo: 'Assinatura', categoria: 'Serviços', valor: 29.9, tipo: 'despesa', data: '2025-10-10' },
+    { titulo: 'Venda', categoria: 'Renda', valor: 120.0, tipo: 'receita', data: '2025-10-12' }
   ];
+
+  selectedMonth: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+
+  constructor(private cd: ChangeDetectorRef) {}
+
+  get transacoesDoMes() {
+    const year = this.selectedMonth.getFullYear();
+    const month = this.selectedMonth.getMonth();
+    return this.transacoes.filter(t => {
+      const d = new Date(t.data);
+      return d.getFullYear() === year && d.getMonth() === month;
+    });
+  }
+
+  get totalDespesas() {
+    return this.transacoesDoMes
+      .filter(t => t.tipo === 'despesa')
+      .reduce((s, t) => s + Number(t.valor), 0);
+  }
+
+  mudarMes(delta: number) {
+    const y = this.selectedMonth.getFullYear();
+    const m = this.selectedMonth.getMonth();
+    this.selectedMonth = new Date(y, m + delta, 1);
+    console.log('mudarMes -> selectedMonth', this.selectedMonth);
+    // força detecção caso o framework não atualize imediatamente
+    this.cd.detectChanges();
+  }
+
+  get mesFormatado() {
+    return new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' }).format(this.selectedMonth);
+  }
 }

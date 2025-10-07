@@ -19,6 +19,86 @@ ion-toolbar {
   gap: 0;
   padding: 4px;
 }
+:host {
+  display: block;
+  background: #0f0e14;
+  color: #fff;
+  min-height: 100vh;
+}
+.gastos-top {
+  padding: 18px 16px 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+.mes-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.mes-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+.mes-label {
+  font-size: 1rem;
+  color: #bdbdbd;
+  text-transform: capitalize;
+}
+.total-mes {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.lista-transacoes {
+  padding: 8px 12px 80px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.transacao-card {
+  background: #181828;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.transacao-titulo {
+  font-weight: 600;
+  color: #fff;
+}
+.transacao-categoria {
+  color: #bdbdbd;
+  font-size: 0.95rem;
+}
+.transacao-valor {
+  font-weight: 700;
+}
+.transacao-valor.negativo {
+  color: #ff6b6b;
+}
+.transacao-valor.positivo {
+  color: #4caf50;
+}
+.sem-transacoes {
+  text-align: center;
+  color: #bdbdbd;
+  margin-top: 24px;
+}
 .toggle-btn {
   border: none;
   outline: none;

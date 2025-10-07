@@ -1,40 +1,30 @@
-<!-- 
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button fill="clear">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Transações</ion-title>
+    <ion-title class="page-title">Despesas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="gastos-content" fullscreen>
-  <div class="gastos-topbar">
-    <div class="gastos-toggle-group">
-      <button class="toggle-btn receitas active">Receitas</button>
-      <button class="toggle-btn despesas">Despesas</button>
+  <div class="gastos-top">
+    <div class="mes-selector">
+  <button type="button" class="mes-btn" (click)="mudarMes(-1)">&lt;</button>
+      <div class="mes-label">{{ mesFormatado }}</div>
+  <button type="button" class="mes-btn" (click)="mudarMes(1)">&gt;</button>
     </div>
+    <div class="total-mes">Total de despesas: <strong>R$ {{ totalDespesas | number:'1.2-2':'pt-BR' }}</strong></div>
   </div>
-  <div class="gastos-list">
-    <div class="gasto-card" *ngFor="let t of transacoes">
-      <div class="gasto-icon" [ngStyle]="{'background': t.iconBg}">
-        <ion-icon [name]="t.icon"></ion-icon>
+
+  <div class="lista-transacoes">
+    <div class="transacao-card" *ngFor="let t of transacoesDoMes">
+      <div class="transacao-info">
+        <div class="transacao-titulo">{{ t.titulo }}</div>
+        <div class="transacao-categoria">{{ t.categoria }} • {{ (t.data | date:'dd/MM/yyyy') }}</div>
       </div>
-      <div class="gasto-info">
-        <div class="gasto-title-row">
-          <span class="gasto-title">{{ t.titulo }}</span>
-          <span class="gasto-valor" [ngClass]="{'negativo': t.tipo==='despesa', 'positivo': t.tipo==='receita'}">{{ t.tipo==='despesa' ? '-' : '+' }} R$ {{ t.valor }}</span>
-        </div>
-        <div class="gasto-meta-row">
-          <span class="gasto-categoria">{{ t.categoria }}</span>
-          <span *ngIf="t.badge" class="gasto-badge" [ngStyle]="{'background': t.badgeColor}">{{ t.badge }}</span>
-        </div>
+      <div class="transacao-valor" [ngClass]="{ 'negativo': t.tipo === 'despesa', 'positivo': t.tipo === 'receita' }">
+        {{ t.tipo === 'despesa' ? '-' : '+' }} R$ {{ t.valor | number:'1.2-2':'pt-BR' }}
       </div>
     </div>
+    <div *ngIf="transacoesDoMes.length === 0" class="sem-transacoes">Nenhuma transação para este mês.</div>
   </div>
-  <button class="fab-add">
-    <ion-icon name="add-outline"></ion-icon>
-  </button>
-</ion-content> -->
+
+</ion-content>
